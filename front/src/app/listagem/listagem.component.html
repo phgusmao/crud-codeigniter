@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Formulário HTML</title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <div class="flex-box container-box">
+      <form class="formulario" method="post">
+        <p> Usuários cadastrados</p>
+
+        <div class="field">
+            <ul>
+              <li *ngFor="let user of usuarios"> |Usuário: {{user.username }} |Email: {{user.email}} |Telefone {{user.telefone}}<button [routerLink]="['/info']" [queryParams]="{id: user.id}">Editar</button>
+                <button (click)="deletar(user.id)">Deletar</button> </li>
+            </ul>
+        </div>
+      <br>
+        <input type="submit" name="acao" value="Voltar">
+    </form>
+    </div>
+</body>
+</html>
